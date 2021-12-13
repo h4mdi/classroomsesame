@@ -15,6 +15,16 @@ use App\Entity\Etudiant;
 class SesameConrollerController extends AbstractController
 {
     /**
+     * @Route("/", name="/")
+     */
+    public function phome(): Response
+    {
+        return $this->render('sesame_conroller/page4.html.twig', [
+            'controller_name' => 'SesameConrollerController',
+        ]);
+    }
+
+    /**
      * @Route("/sesame/page1", name="sesame_cour")
      */
     public function page1(): Response
