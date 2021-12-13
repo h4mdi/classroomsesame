@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SesameConrollerController!{% endblock %}
+
+{% block body %}
+
+
+
+
+    <center><h1>bienvennue *page de teste  connexion * </h1></center>
+  
+    <form action="{{ path('add')}}" method="POST">
+  nom :
+  <div>
+        <input type="text"  name="nom">
+  </div>
+    
+  <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">prenom</label>
+  </div>
+
+  <div class="col-sm-10">
+        <input type="text"  name="word">
+   </div>
+    
+   
+    
+    <div class="button">
+                <button type="submit">ajouter vos donnees </button>
+            </div>
+
+      </form>
+
+   
+{% endblock %}

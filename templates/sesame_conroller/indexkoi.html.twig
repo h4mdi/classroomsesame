@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('notice2') %}
+
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 600px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Vous etes dans la page login</h1>
+        <form action="{{path('loginfn')}}" method="POST">
+            <fieldset>
+                <legend>Formulaire Login</legend>
+
+                <div class="form-group">
+                    <label for="login" class="form-label mt-4">Login</label>
+                    <input type="text" class="form-control" id="login"  placeholder="Login" name="nom">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--!>
+                </div>
+
+                <div class="form-group">
+                    <label for="mdp" class="form-label mt-4">Mot de passe</label>
+                    <input type="password" class="form-control" id="mdp" name="ord" placeholder="Mot de passe">
+                </div>
+
+
+
+
+
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            <br>
+                <a href="/signup">Créer un compte</a>
+            </fieldset>
+        </form>
+
+
+
+
+    </div>
+{% endblock %}
